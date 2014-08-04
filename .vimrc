@@ -16,4 +16,4 @@ set ts=4
 set tabstop=4
 set shiftwidth=4
 so ~/vimsyntax/cst.vim
-
+colorscheme darkblue
