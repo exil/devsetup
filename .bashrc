@@ -35,5 +35,18 @@ PATH=$PATH:$HOME/bin
 export PATH
 
 
+function parse_git_branch {
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+  echo "("${ref#refs/heads/}")"
+}
+
+BLACK="\[\033[0m\]"
+BLUE="\[\033[1;34m\]"
+GREEN="\[\033[0;32m\]"
+RED="\[\033[0;31m\]"
+YELLOW="\[\033[0;33m\]"
+
+export PS1="\e[97;48;5;237m  ===[virtual machine]===  \e[0m \A $RED\! $BLUE\w $GREEN\$(parse_git_branch)$BLACK\$ "
+
 #Make git log awesome
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit"
