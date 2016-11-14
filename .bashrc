@@ -50,3 +50,5 @@ export PS1="\e[97;48;5;237m  ===[virtual machine]===  \e[0m \A $RED\! $BLUE\w $G
 
 #Make git log awesome
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit"
+
+export PATH=/opt/centos/devtoolset-1.1/root/usr/bin/:$PATH
